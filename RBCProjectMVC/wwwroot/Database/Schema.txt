@@ -1,0 +1,54 @@
+﻿create procedure sp_SearchEmployees
+    @term nvarchar(200)
+as
+begin
+    set nocount on;
+
+    select 
+        EmployeId,
+        FullName,
+        Position,
+        Department,
+        HireDate,
+        Email,
+        Phone,
+        Salary,
+        CreatedAt,
+        FilePath,
+        FileBlob
+    from Employees
+    where 
+        (@term IS NULL OR @term = '' 
+         OR FullName    LIKE '%' + @term + '%'
+         OR Position    LIKE '%' + @term + '%'
+         OR Department  LIKE '%' + @term + '%'
+         OR Email       LIKE '%' + @term + '%'
+         OR Phone       LIKE '%' + @term + '%');
+end
+go
+
+
+
+
+
+
+create view vw_EmployeesForExport
+as
+select
+    EmployeId,
+    FullName,
+    Position,
+    Department,
+    HireDate,
+    Email,
+    Phone,
+    Salary
+from Employees;
+go
+
+
+select * from vw_EmployeesForExport
+
+
+
+create nonclustered index IX_Employees_FullName on Employees (FullName)  
