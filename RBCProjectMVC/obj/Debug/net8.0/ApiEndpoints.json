@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "RBCProjectMVC.Controllers.Api.EmployeesApiController",
+    "Method": "Get",
+    "RelativePath": "api/EmployeesApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortDir",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RBCProjectMVC.Controllers.Api.EmployeesApiController",
+    "Method": "Post",
+    "RelativePath": "api/EmployeesApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createVM",
+        "Type": "Entities.ViewModels.Employee.EmployeeCreateVM",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

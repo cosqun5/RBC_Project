@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Employees";
+}
+
+<h2>Employees</h2>
+
+<div class="mb-3">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search employees..." />
+</div>
+
+<div class="mb-2 d-flex align-items-center">
+    <span>Total employees: <span id="totalCount">0</span></span>
+    <a href="/ExportPdf/ExportPdf" class="btn btn-primary ms-auto">Export PDF</a>
+    <a href="/Employee/Create" class="btn btn-success ms-2">New Employee</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th><a href="#" class="sort-header" data-column="FullName">Full Name</a></th>
+            <th><a href="#" class="sort-header" data-column="Position">Position</a></th>
+            <th><a href="#" class="sort-header" data-column="Department">Department</a></th>
+            <th><a href="#" class="sort-header" data-column="HireDate">Hire Date</a></th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Salary</th>
+            <th>Photo</th>
+        </tr>
+    </thead>
+    <tbody id="employeeTableBody">
+
+    </tbody>
+</table>
+
+<h4 class="mt-5">Employees per Department</h4>
+<canvas id="departmentChart" height="100"></canvas>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/EmployeeIndex.js"></script>
+}
